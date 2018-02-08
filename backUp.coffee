@@ -6,14 +6,54 @@ util = require 'util'
 exec = util.promisify require('child_process').exec
 tar = require 'tar'
 fs = require 'fs'
+HOME = '/root/'
+HOST = '192.168.56.72'
+backupList = require('./backup_list') HOME, HOST
+fsExtra = require 'fs-extra'
+
 
 module.exports =
-  backup: (backupList, host) ->
-    Promise.map backupList, (element) ->
-      # fsExtra.copy element.src, path.join __dirname, element.dest
-      command = "scp -r -oStrictHostKeyChecking=no root@#{host}:#{element.src} #{element.dest}"
+  create_backup:()->
+    await fsExtra.remove HOST
+    await Promise.map backupList,(e) ->
+      path = HOST + '/' + e.name
+      fsExtra.mkdirs HOST + '/'+ e.name 
+    
+  countFolder: ()->
+    countFolder  = "find  #{HOST} -type d | wc -l"
+    try
+      { stdout, stderr } = await exec  countFolder
+      stdout
+    catch e
+      console.log "error--: ", e.stderr
+  countFileAfterBackup:()->
+    v = []
+    await Promise.map backupList,(e) ->
+      path = e.dest + '/' + e.name
       try
-        { stdout, stderr } = await exec command
+        command =  "find  #{path} -type f | wc -l    "
+        { stdout, stderr } = await exec  command
+        stdout
       catch e
-      stderr == ''
+        console.log "error: ", e.stderr
+  ssh_countfile:()->
+    Promise.map backupList, (element) ->
+      try
+        command =  "ssh root@#{HOST} find #{element.src} -type f | wc -l    "
+        { stdout, stderr } = await exec  command
+        stdout
+      catch e
+        console.log "error: ", e.stderr
+
+
+  backup: () ->
+    Promise.map backupList, (element) ->
+      path = element.dest + '/' + element.name
+      command = "scp -r -oStrictHostKeyChecking=no root@#{HOST}:#{element.src}  #{path}"
+      try
+        { stdout, stderr } = await exec  command
+        stdout
+      catch e
+        console.log "error1: ", e.stderr
+
 

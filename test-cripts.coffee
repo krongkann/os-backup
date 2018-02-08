@@ -1,46 +1,41 @@
-{ backup, tarCreate, restore } = require './index'
+{  create_backup, backup, countFolder, ssh_countfile, countFileAfterBackup } = require './backUp'
 { expect } = require 'chai'
 _ = require 'lodash'
-fsExtra = require 'fs-extra'
 path = require 'path'
 Promise = require 'bluebird'
 util = require 'util'
 exec = util.promisify require('child_process').exec
-
-HOME = '/root/'
-HOST = '192.168.56.22'
-backupList = require('./backup_list') HOME, HOST
-
-sshRemoveAll = () ->
-  _.each backupList, (e) ->
-    preCommand = "ssh -oStrictHostKeyChecking=no root@#{HOST} 'rm -rf #{e.src}'"
-    { stdout, stderr } = await exec preCommand
-    if stderr != ''
-      throw stderr
+backupList = require('./backup_list') 
+HOST = '192.168.56.72'
 
 describe "BACKUP AND RESTORE File", ->
   before ->
-    console.log 'AWAKENING!'
-    await fsExtra.remove HOST
-    fsExtra.mkdirs HOST
-    
-  after ->
-    sshRemoveAll()
+    console.log 'Hello World!'
+ 
+  it 'should create folder backup', ->
+    await create_backup()
+    all_file = await countFolder()
+    all_list = backupList("","").length + 1
+    expect(all_file).to.eq "#{all_list}\n"
 
   it 'should Backup', ->
     this.timeout 0
-    sourceExists = await backup backupList, HOST
+    await  backup()
+    # countFolder = await countFolder()
+    ssh_countfile = await ssh_countfile()
+    # create_backup = await create_backup()
+    # # console.log "countFolder===", countFolder
+    console.log "ssh_countfile", ssh_countfile
+    # # console.log "create_backup", create_backup
+    countFileAfterBackup =  await countFileAfterBackup()
 
-    backupExists = await Promise.map backupList, (e) ->
-      fsExtra.pathExists path.join __dirname, e.dest
-    expect(backupExists).to.deep.eq sourceExists
+    expect(ssh_countfile).to.eq countFileAfterBackup
 
-    await tarCreate HOST
-    tarExist = await fsExtra.pathExists path.join __dirname, "#{HOST}.tgz"
-    expect(tarExist).to.be.true
+    # await tarCreate HOST
+    # tarExist = await fsExtra.pathExists path.join __dirname, "#{HOST}.tgz"
+    # expect(tarExist).to.be.true
 
-    await fsExtra.remove "#{HOST}"
-    folderExist = await fsExtra.pathExists path.join __dirname, "#{HOST}"
-    expect(folderExist).to.be.false
+    # await fsExtra.remove "#{HOST}"
+    # folderExist = await fsExtra.pathExists path.join __dirname, "#{HOST}"
+    # expect(folderExist).to.be.false
 
-  

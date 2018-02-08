@@ -1,0 +1,11 @@
+{
+  "Name": "authz",
+  "Addr": "https://authz-server:8080",
+  "TLSConfig": {
+    "InsecureSkipVerify": false,
+    "CAFile": "/etc/docker/plugins/ca.crt",
+    "CertFile": "/etc/docker/plugins/plugin1.crt",
+    "KeyFile": "/etc/docker/plugins/plugin1.key"
+  }
+}
+

@@ -1,0 +1,88 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            4f:dc:8a:89:ee:f1:d1:cf:b1:4e:3c:bc:8e:68:10:4f
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=krongkan
+        Validity
+            Not Before: Feb  2 08:45:09 2018 GMT
+            Not After : Jan 31 08:45:09 2028 GMT
+        Subject: CN=krongkan-server1
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (2048 bit)
+                Modulus:
+                    00:ab:94:cf:9c:1d:24:1b:bf:3e:80:36:a0:ac:d0:
+                    64:0b:e7:8f:dc:11:89:57:91:83:18:60:f9:fb:75:
+                    2f:4d:68:dd:b8:18:fc:6a:7e:83:83:1a:5b:8d:62:
+                    2f:df:e9:76:22:de:7c:1f:cb:24:ed:b8:12:1f:43:
+                    e3:42:af:15:a1:42:8f:48:8d:ee:b7:f8:36:a3:d9:
+                    be:69:f3:15:44:50:3d:5f:bb:f5:c4:5e:e0:d9:5e:
+                    17:a3:d2:ba:19:4c:4c:ad:0f:3c:11:35:fd:f0:d5:
+                    b4:be:34:13:37:37:11:65:b3:bb:ee:65:8a:61:0f:
+                    6c:2d:4e:98:23:16:81:54:1b:15:6a:10:ae:6c:5f:
+                    d2:ee:0f:68:01:91:4e:6b:99:7f:06:4f:28:3b:aa:
+                    93:0d:01:1d:90:60:97:e5:0b:36:53:7c:87:eb:bf:
+                    8e:2e:aa:cf:db:d1:45:50:50:c1:cd:c6:92:0f:0f:
+                    70:26:a1:da:0f:ac:26:7d:38:bc:ec:93:97:38:ca:
+                    7c:1d:fc:ed:f6:12:e2:cb:bb:94:5a:c1:dc:f7:3e:
+                    e4:3b:3d:c4:38:fc:d6:1a:d2:5a:f7:c5:bc:78:2b:
+                    2e:9f:6d:51:be:10:0c:5d:9c:e2:9f:ba:06:7e:4f:
+                    43:40:72:2c:8f:56:c7:33:93:e4:72:65:67:47:74:
+                    da:97
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Subject Key Identifier: 
+                71:E3:8F:D1:B1:F1:5C:31:7C:53:77:AF:2E:13:FB:5D:33:A3:17:D3
+            X509v3 Authority Key Identifier: 
+                keyid:A3:6A:2C:1A:FF:BC:68:CA:4E:5D:A5:90:12:1C:52:CA:85:92:4D:98
+                DirName:/CN=krongkan
+                serial:D1:9B:85:14:AA:81:10:B5
+
+            X509v3 Extended Key Usage: 
+                TLS Web Server Authentication
+            X509v3 Key Usage: 
+                Digital Signature, Key Encipherment
+            X509v3 Subject Alternative Name: 
+                DNS:krongkan-server1
+    Signature Algorithm: sha256WithRSAEncryption
+         87:1e:d7:49:83:f6:15:0c:c7:02:11:40:4b:be:87:8c:3a:25:
+         f9:57:92:83:15:2b:72:f8:98:ca:7e:1e:ed:d5:09:26:c0:38:
+         2e:c5:15:eb:b9:81:82:b5:7f:99:46:85:01:ef:3e:eb:a6:1a:
+         e6:5b:22:87:c2:73:74:75:80:6d:1e:80:0c:b2:f3:a9:2f:d1:
+         31:01:83:bd:6e:74:51:31:a2:bd:aa:a3:92:47:a9:2e:55:6d:
+         38:04:80:fc:42:61:d6:d7:c6:cf:bf:4c:3a:e0:a8:47:00:02:
+         ac:0f:d6:51:e2:62:cc:0e:fe:2d:0e:0e:6a:53:88:14:88:a2:
+         65:b1:ff:68:df:28:19:5f:f5:56:d5:89:62:5e:8e:2f:41:3d:
+         ab:9f:21:81:65:fd:30:61:f2:ea:04:59:f5:70:85:00:a0:80:
+         b4:fe:72:fd:27:e4:10:09:1d:95:f4:f1:4f:50:e8:5e:75:c5:
+         1a:36:44:d6:05:46:a6:2d:ab:32:77:ff:40:05:d8:d3:8a:91:
+         ec:a9:18:eb:bd:74:36:a6:83:b4:ba:ec:7e:e4:d3:09:bc:2e:
+         3d:85:5e:07:6d:a2:62:e0:e5:87:66:5b:46:49:01:f3:1b:d7:
+         c5:cd:1b:cb:75:9c:14:f8:75:10:53:df:c0:73:40:aa:22:fc:
+         fe:40:39:65
+-----BEGIN CERTIFICATE-----
+MIIDajCCAlKgAwIBAgIQT9yKie7x0c+xTjy8jmgQTzANBgkqhkiG9w0BAQsFADAT
+MREwDwYDVQQDDAhrcm9uZ2thbjAeFw0xODAyMDIwODQ1MDlaFw0yODAxMzEwODQ1
+MDlaMBsxGTAXBgNVBAMMEGtyb25na2FuLXNlcnZlcjEwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQCrlM+cHSQbvz6ANqCs0GQL54/cEYlXkYMYYPn7dS9N
+aN24GPxqfoODGluNYi/f6XYi3nwfyyTtuBIfQ+NCrxWhQo9Ije63+Daj2b5p8xVE
+UD1fu/XEXuDZXhej0roZTEytDzwRNf3w1bS+NBM3NxFls7vuZYphD2wtTpgjFoFU
+GxVqEK5sX9LuD2gBkU5rmX8GTyg7qpMNAR2QYJflCzZTfIfrv44uqs/b0UVQUMHN
+xpIPD3AmodoPrCZ9OLzsk5c4ynwd/O32EuLLu5Rawdz3PuQ7PcQ4/NYa0lr3xbx4
+Ky6fbVG+EAxdnOKfugZ+T0NAciyPVsczk+RyZWdHdNqXAgMBAAGjgbEwga4wCQYD
+VR0TBAIwADAdBgNVHQ4EFgQUceOP0bHxXDF8U3evLhP7XTOjF9MwQwYDVR0jBDww
+OoAUo2osGv+8aMpOXaWQEhxSyoWSTZihF6QVMBMxETAPBgNVBAMMCGtyb25na2Fu
+ggkA0ZuFFKqBELUwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMBsG
+A1UdEQQUMBKCEGtyb25na2FuLXNlcnZlcjEwDQYJKoZIhvcNAQELBQADggEBAIce
+10mD9hUMxwIRQEu+h4w6JflXkoMVK3L4mMp+Hu3VCSbAOC7FFeu5gYK1f5lGhQHv
+PuumGuZbIofCc3R1gG0egAyy86kv0TEBg71udFExor2qo5JHqS5VbTgEgPxCYdbX
+xs+/TDrgqEcAAqwP1lHiYswO/i0ODmpTiBSIomWx/2jfKBlf9VbViWJeji9BPauf
+IYFl/TBh8uoEWfVwhQCggLT+cv0n5BAJHZX08U9Q6F51xRo2RNYFRqYtqzJ3/0AF
+2NOKkeypGOu9dDamg7S67H7k0wm8Lj2FXgdtomLg5YdmW0ZJAfMb18XNG8t1nBT4
+dRBT38BzQKoi/P5AOWU=
+-----END CERTIFICATE-----
+
